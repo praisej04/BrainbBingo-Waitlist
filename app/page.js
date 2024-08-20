@@ -24,7 +24,7 @@ const Home = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res =  await fetch('../api/route', { //recently changed this from api/route
+    const res =  await fetch('/api/route', { //recently changed this from api/route
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -41,15 +41,26 @@ const Home = () => {
   };
 
   return (
-    <Box style= {{ textAlign: 'center' }}> 
- <Typography variant="h2" style={{marginTop: '30px'}}>
- Introducing BrainBingo!
+    <Box sx= {{ 
+      height: '100vh', 
+      width: '180vh',
+      backgroundImage: 'linear-gradient(to right bottom, black, #1f103e, #96429b, #c2629b)',
+      display: 'flex',
+      alignItems: 'top',
+      flexdirection: 'column',
+      justifycontent: 'center',
+     }}> 
+     <Box style= {{ height: '100vh', 
+      width: '180vh', textAlign: 'center' }}>
+     <Typography variant="h2" style={{marginTop: '40px'}}>
+       Introducing BrainBingo!
  </Typography>
- <Typography variant="h4" style={{marginTop: '30px'}}>
-  Gain access to an AI powered studying tool by joining our waitlist!
+ <Typography variant="h4" style={{marginTop: '60px'}}>
+       Gain access to an AI powered studying tool by joining our waitlist!
  </Typography>
+     </Box>
     <Box sx={style}>
-    <Typography variant="h4" style= {{ color: '#d24e01' }} gutterBottom>
+    <Typography variant="h4" style= {{ color: '#1f103e' }} gutterBottom>
       Join the Waitlist
       </Typography>
       <form onSubmit={handleSubmit}>
@@ -71,7 +82,7 @@ const Home = () => {
         }}
         />
         </Box>
-        <Button variant="contained" style={{backgroundColor: '#d24e01',  color:'#f0f0f0' }}type="submit" fullWidth>
+        <Button variant="contained" style={{backgroundColor: '#1f103e',  color:'#f0f0f0' }}type="submit" fullWidth>
           JOIN WAITLIST
         </Button>
       </form>
